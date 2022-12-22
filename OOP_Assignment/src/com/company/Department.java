@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Department {
 
+    Menu show = new Menu();
     String choiceDep;
     private static int size;
     private static ArrayList<Integer> DID = new ArrayList<Integer>();
@@ -13,7 +14,7 @@ public class Department {
     Scanner inputD = new Scanner(System.in);
 
     public void setSize(int size) {
-        this.size = size;
+        Department.size = size;
     }
 
     public int getSize() {
@@ -29,15 +30,15 @@ public class Department {
     }
 
     public void setAccYear(ArrayList<Integer> AccYear) {
-        this.AccYear = AccYear;
+        Department.AccYear = AccYear;
     }
 
     public void setID(ArrayList<Integer> DID) {
-        this.DID = DID;
+        Department.DID = DID;
     }
 
     public void setName(ArrayList<String> DName) {
-        this.DName = DName;
+        Department.DName = DName;
     }
 
     public ArrayList<String> getName() {
@@ -86,8 +87,7 @@ public class Department {
                     System.out.println("\t\t\t* * * * * * * * * * * * * * *");
                     System.out.println("\t \t \t Details for Department" + (i + 1));
                     System.out.println("\t\t\t* * * * * * * * * * * * * * *");
-                    System.out.println("Enter Department ID: ");
-                    DID.add(inputD.nextInt());
+                    DID.add(check);
                     System.out.println("Enter Department Name: ");
                     inputD.nextLine();
                     DName.add(inputD.nextLine().toUpperCase());
@@ -105,7 +105,6 @@ public class Department {
         choiceDep = inputD.nextLine().toUpperCase();
         switch (choiceDep) {
             case "Y":
-                Menu show = new Menu();
                 show.welcome();
                 break;
             case "N":
@@ -119,7 +118,8 @@ public class Department {
     public void displayDepartment() {
         if (DID.isEmpty()) {
             System.out.println("No Records Available");
-        } else {
+        }
+        else {
             System.out.println("Here is the list of all Departments");
             int i = 0;
             while (i < DID.size()) {
@@ -131,7 +131,6 @@ public class Department {
             choiceDep = inputD.nextLine().toUpperCase();
             switch (choiceDep) {
                 case "Y":
-                    Menu show = new Menu();
                     show.welcome();
                     break;
                 case "N":
@@ -150,12 +149,12 @@ public class Department {
         DName.remove(location);
         AccYear.remove(location);
         System.out.println("Department Succesfully Deleted");
+
         System.out.println("Would you like to go back to the main menu? (Y/N)");
         inputD.nextLine();
         choiceDep = inputD.nextLine().toUpperCase();
         switch (choiceDep) {
             case "Y":
-                Menu show = new Menu();
                 show.welcome();
                 break;
             case "N":

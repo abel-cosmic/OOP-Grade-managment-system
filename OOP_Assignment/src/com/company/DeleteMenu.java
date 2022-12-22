@@ -8,7 +8,7 @@ public class DeleteMenu {
     public void setChoiceDelete(int choiceDelete){
         this.choiceDelete = choiceDelete;
     }
-    public void DeleteMenu(){
+    public void deleteMenu(){
 
         do {
             System.out.print("\033[H\033[2J");

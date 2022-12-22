@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Course extends Department {
+
     Department department = new Department();
     Menu show = new Menu();
-    String choiceCourse;
+    private String choiceCourse;
+
     private static ArrayList<String> CID = new ArrayList<String>();
     private static ArrayList<Integer> CreditHr = new ArrayList<Integer>();
     private static ArrayList<Integer> ContactHr = new ArrayList<Integer>();
@@ -14,11 +16,14 @@ public class Course extends Department {
     private static ArrayList<Integer> LectureHr = new ArrayList<Integer>();
     private static ArrayList<String> CName = new ArrayList<String>();
     private static ArrayList<Integer> CDID = new ArrayList<Integer>();
+
     ArrayList<Integer>DID = department.getID();
     ArrayList<String>DName = department.getName();
     Scanner inputC = new Scanner(System.in);
 
-
+    public static ArrayList<String> getCID() {
+        return CID;
+    }
 
     public void addCourse() {
         System.out.println("Enter Department ID");
@@ -29,9 +34,9 @@ public class Course extends Department {
             System.out.println("You Have Selected" + " " + DName.get(location) + " " + DID.get(location));
             System.out.println("Enter Course ID: ");
             inputC.nextLine();
-            CID.add(inputC.nextLine());
+            CID.add(inputC.nextLine().toUpperCase());
             System.out.println("Enter Course Name");
-            CName.add(inputC.nextLine());
+            CName.add(inputC.nextLine().toUpperCase());
             System.out.println("Enter Credit hour");
             CreditHr.add(inputC.nextInt());
             System.out.println("Enter Contact hour");
@@ -63,7 +68,6 @@ public class Course extends Department {
         choiceCourse = inputD.nextLine().toUpperCase();
         switch (choiceCourse) {
             case "Y":
-                Menu show = new Menu();
                 show.welcome();
                 break;
             case "N":
@@ -92,13 +96,13 @@ public class Course extends Department {
             switch(choice){
                 case 1: location = CID.indexOf(value);
                         System.out.println("Enter new Course ID");
-                        value = inputC.nextLine();
+                        value = inputC.nextLine().toUpperCase();
                         CID.set(location,value);
                         System.out.println("Course ID has been successfully updated!!!");
                         break;
                 case 2: location = CID.indexOf(value);
                     System.out.println("Enter new Course Name");
-                    value = inputC.nextLine();
+                    value = inputC.nextLine().toUpperCase();
                     CName.set(location,value);
                     System.out.println("Course Name has been successfully updated!!!");
                     break;
@@ -137,7 +141,6 @@ public class Course extends Department {
         choiceCourse = inputD.nextLine().toUpperCase();
         switch (choiceCourse) {
             case "Y":
-                Menu show = new Menu();
                 show.welcome();
                 break;
             case "N":
@@ -164,7 +167,13 @@ public class Course extends Department {
                     for(int i=0; i<CDID.size();i++){
                         if(CDID.get(i) == value){
                             int location = CDID.indexOf(value);
-                            System.out.println("Department: " + CDID.get(location) + " " + "Course Name: " + CName.get(location) + " " + "Course ID: " + CID.get(location) + " "  + "Contact Hour: "  + ContactHr.get(location) + " " + "Lab hour: " + LabHr.get(location) + " " + "Lecture hour: " + " " +  LectureHr.get(location));
+                                 System.out.println("Department: "
+                                + CDID.get(location) + " " + "Course Name: "
+                                + CName.get(location) + " " + "Course ID: "
+                                + CID.get(location) + " "  + "Contact Hour: "
+                                + ContactHr.get(location) + " " + "Lab hour: "
+                                + LabHr.get(location) + " " + "Lecture hour: " + " "
+                                +  LectureHr.get(location));
                         }
                     }
                 }
@@ -176,7 +185,6 @@ public class Course extends Department {
         choiceCourse = inputD.nextLine().toUpperCase();
         switch (choiceCourse) {
             case "Y":
-                Menu show = new Menu();
                 show.welcome();
                 break;
             case "N":
@@ -205,7 +213,6 @@ public class Course extends Department {
         choiceDep = inputD.nextLine().toUpperCase();
         switch (choiceDep) {
             case "Y":
-                Menu show = new Menu();
                 show.welcome();
                 break;
             case "N":

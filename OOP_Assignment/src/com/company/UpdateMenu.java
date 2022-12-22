@@ -9,7 +9,7 @@ public class UpdateMenu {
         this.choiceUpdate = choiceUpdate;
     }
 
-    public void UpdateMenu() {
+    public void updateMenu() {
         do{
 
             System.out.println("1. Update Student Grade");

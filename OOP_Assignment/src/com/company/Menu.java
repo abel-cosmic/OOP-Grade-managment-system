@@ -30,7 +30,7 @@ public class Menu {
                         break;
                 case 2:  System.out.print("\033[H\033[2J");
                         UpdateMenu update = new UpdateMenu();
-                        update.UpdateMenu();
+                        update.updateMenu();
                         break;
                 case 3: System.out.print("\033[H\033[2J");
                         DisplayMenu display = new DisplayMenu();
@@ -39,7 +39,7 @@ public class Menu {
                 case 4:
                     System.out.print("\033[H\033[2J");
                         DeleteMenu delete = new DeleteMenu();
-                        delete.DeleteMenu();
+                        delete.deleteMenu();
                         break;
                 case 5: System.exit(0);
                         break;
