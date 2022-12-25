@@ -29,13 +29,13 @@ public class Display {
         }while(choiceDisplay>3);
     }
     public void displayDep(){
-        if (number_of_departments == 0) {
+        if (noOfDepartments == 0) {
             System.out.println("No Records Available");
         }
         else {
             System.out.println("Here is the list of all Departments");
             int i = 0;
-            while (i < number_of_departments) {
+            while (i < noOfDepartments) {
                 System.out.println(departments[i].DName + "\t" +
                         departments[i].DID + "\t" + departments[i].AccYear);
                 i++;
@@ -44,16 +44,41 @@ public class Display {
         }
     }
     public void displayCourse(){
-
+        if (noOfCourses == 0) {
+            System.out.println("No Records Available");
+        }
+        else {
+            System.out.println("Here is the list of all Courses");
+            int i = 0;
+            while (i < noOfCourses) {
+                System.out.println(courses[i].CID + "\t" + courses[i].CID + "\t" +
+                        courses[i].CreditHr + "\t" + courses[i].ContactHr);
+                i++;
+            }
+            stopOrContinue();
+        }
     }
     public void displayStudent(){
-
+        if (noOfStudents == 0) {
+            System.out.println("No Records Available");
+        }
+        else {
+            System.out.println("Here is the list of all Students");
+            int i = 0;
+            while (i < noOfStudents) {
+                System.out.println(students[i].SID + "\t" + students[i].FName + "\t" + students[i].MName + "\t"
+                        + students[i].LName + "\t" + students[i].SDID);
+                i++;
+            }
+            stopOrContinue();
+        }
     }
     private void stopOrContinue(){
         do{
             System.out.println("Would you like to go back to the main menu? (Y/N)");
-            input.nextLine();
             String choice = input.nextLine().toUpperCase();
+            //glitch here for some reason
+            //makes you IT automatically enters the first itretion and let's you input in the second
             switch (choice) {
                 case "Y" -> {
                     return;

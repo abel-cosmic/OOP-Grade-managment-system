@@ -2,6 +2,7 @@ package Trident;
 
 import static Trident.Curriculum.*;// I had to replace the menu with this
 public class Main {
+    // read class curriculum after this to understand the main logic of the code
     public static void main(String[] args) {
         int menuChoice;
         System.out.println("\t\t\t* * * * * * * * * * * * * * *");
@@ -29,5 +30,4 @@ public class Main {
             }
         } while(true);
     }
-
 }
