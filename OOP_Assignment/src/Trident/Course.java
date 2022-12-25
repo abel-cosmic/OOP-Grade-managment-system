@@ -1,6 +1,5 @@
 package Trident;
 
-
 public class Course {
     String CID;
     int CreditHr;
