@@ -47,17 +47,27 @@ public class Course_Impl extends BasicFunctions {//extended to use all the basic
         //TODO: MAKE THE UPDATE COURSE PART
     }
     public void displayCourse(){
-        if (noOfCourses == 0) {
+        if (Course.getNoOfCourses() == 0) {
             System.out.println("No Records Available");
         }
         else {
             System.out.println("Here is the list of all Courses");
             int i = 0;
-            while (i < noOfCourses) {
-                System.out.println(courses[i].CID + "\t" + courses[i].CID + "\t" +
-                        courses[i].CreditHr + "\t" + courses[i].ContactHr);
+            System.out.println("**********************************************************************************************************");
+            System.out.println(
+                    "Course ID\t |" + "Course Name\t\t    |" + "Credit hour  |" + "Contact hour|" +
+                    "Lab hour|" + "Lecture hour|" + "Department Id  *"
+            );
+            System.out.println("**********************************************************************************************************");
+            while (i < Course.getNoOfCourses()) {
+                System.out.printf(
+                        "* %-10s | %-20s | %-11d | %-10d | %-6d | %-10d | %-14s *%n",
+                        courses[i].getCID(), courses[i].getCName(),
+                        courses[i].getCreditHr(),courses[i].getContactHr(),
+                        courses[i].getLabHr(),courses[i].getLectureHr(),courses[i].getDID());
                 i++;
             }
+            System.out.println("**********************************************************************************************************");
             stopOrContinue();
         }
     }
